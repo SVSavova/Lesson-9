@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+/*
+Спортен магазин прави отстъпка на всички продукти
+в магазина, като за всички дрехи отстъпката е 20%, за
+всички спортни обувки отстъпката е 10%, за всички
+останали продукти е 5%.
+Напишете програма, в която питате потребителят за
+вида на стоката, която иска да закупи и за нейната
+цена, отпечатайте сумата след добавената отстъпка.
+ */
+public class task_4 {
+    public static void main(String[] args) {
+        System.out.println();
+        double price;
+        double total;
+        String product;
+
+        Scanner scanner =  new Scanner(System.in);
+        System.out.print("Enter the product: ");
+        product = scanner.next();
+        System.out.print("Enter the price: ");
+        price = scanner.nextDouble();
+
+        switch (product){
+            case "clothes":
+                total = price - (price * 0.20);
+                break;
+            case  "shoes":
+                total = price - (price * 0.10);
+                break;
+            default: total = price - (price * 0.05);
+        }
+        System.out.println();
+        System.out.printf("Your new price is: " + "%.2f", total);
+        System.out.println();
+    }
+}
