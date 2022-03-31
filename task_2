@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+/*
+Едно училище има следните правила за системата за
+оценяване:
+▪ Под 25 – F
+▪ 25 до 45 – Е
+▪ 45 до 50 – D
+▪ 50 до 60 – С
+▪ 60 до 80 – B
+▪ Над 80 – A
+Напишете програма, която по въведен резултат се
+изписва съответстващата оценка.
+ */
+public class task_2 {
+    public static void main(String[] args) {
+
+        int evaluation;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        evaluation = scanner.nextInt();
+
+        boolean a = evaluation > 80;
+        boolean b = evaluation > 60 && evaluation <= 80;
+        boolean c = evaluation > 50 && evaluation <= 60;
+        boolean d = evaluation > 45 && evaluation <= 50;
+        boolean e = evaluation > 25 && evaluation <= 45;
+        boolean f = evaluation <= 25;
+
+       if( a == true){
+           System.out.println("The evaluation is: A");
+       }else
+           if(b == true){
+           System.out.println("The evaluation is: B");
+       }else
+           if(c == true) {
+           System.out.println("The evaluation is: C");
+       }else
+           if(d == true){
+        System.out.println("The evaluation is: D");
+       }else
+           if(e == true) {
+        System.out.println("The evaluation is: E");
+       }else{
+           System.out.println("The evaluation is: F");
+       }
+    }
+}
