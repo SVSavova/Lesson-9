@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+/*
+Компанията е решила да даде бонус от 5% на служител,
+ако е работил/а за компанията повече от 5 години, ако
+е работил повече от 10 години – 7%, за повече от 15
+години – 10%.
+Напишете програма, в която питате потребителя за
+неговата заплата и година на служба и отпечатвате
+бонуса, който ще получи служителят.
+ */
+public class task_3 {
+    public static void main(String[] args) {
+
+        double salary;
+        int internship;
+        boolean bonusFive, bonusSeven, bonusTen;
+        double newSalary = 0;
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your salary: ");
+        salary = scanner.nextDouble();
+        System.out.print("Enter your internship in the company: ");
+        internship = scanner.nextInt();
+
+        bonusFive = internship >= 5;
+        bonusSeven = internship >= 10;
+        bonusTen = internship >= 15;
+
+        if(internship >= 5 && internship < 10){
+            bonusFive = true;
+            newSalary = salary + (salary * 0.05);
+
+        }else if(internship >= 10 && internship < 15){
+            bonusSeven = true;
+            newSalary = salary + (salary * 0.07);
+
+        }else if (internship >= 15){
+            bonusTen = true;
+            newSalary = salary + (salary * 0.10);
+
+        }
+        System.out.printf("Old salary: " + "%.2f", salary);
+        System.out.println();
+        System.out.printf("New salary: " + "%.2f", newSalary);
+
+    }
+}
