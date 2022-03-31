@@ -1,0 +1,27 @@
+/*
+Напишете програма, която проверява по
+дадена дължина и широчина, дали
+фигурата е квадрат или правоъгълник.
+▪Дължината и широчината да се въвеждат
+от конзолата.
+ */
+
+import java.util.Scanner;
+
+public class task_1 {
+    public static void main(String[] args) {
+
+        int sizeA, sizeB;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print(" Enter size A: ");
+        sizeA =  scanner.nextInt();
+        System.out.print(" Enter size B: ");
+        sizeB = scanner.nextInt();
+
+        if(sizeA == sizeB){
+            System.out.println("This is square.");
+        }else{
+            System.out.println("This is rectangle. ");
+        }
+    }
+}
